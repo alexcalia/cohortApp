@@ -1,0 +1,534 @@
+/*******************************
+        Setup Snippet
+*******************************/
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.srOnly { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+/*******************************
+        General Stylings
+*******************************/
+html {
+  font-size: 125%;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0 0 30px 0;
+}
+
+p,
+h1 {
+  margin : 0;
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0
+}
+
+li {
+  padding: 10px;
+}
+
+button,
+.displayNameInput {
+  border: none;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+/* Background Color: #282830; */
+header,
+.displayNameInput,
+.howToButton,
+.sideBar,
+.sideBar ul:last-child li:first-child:focus,
+.sideBar ul:last-child li:first-child:hover,
+.messageBox:nth-child(even) .displayNameBox,
+.aboutDescription article,
+.mobileHamburger {
+  background-color: #282830;
+}
+
+/* Color: white; */
+.sideBar li a,
+.messageBox:nth-child(even) .displayNameBox,
+.aboutDescription article,
+.mobileHamburger {
+  color: white;
+}
+
+/* Background Color: #50D292; */
+.sideBar li:hover,
+.sideBar li:focus,
+.sideBarActive,
+.sidebar li a:hover,
+.sideBar li a:focus,
+.messageBox:nth-child(odd) .displayNameBox,
+.messageInputForm button,
+.inspireAuthor,
+.inspireForm button,
+.quoteAuthor{
+  background-color: #50D292;
+}
+
+/* Color: #50D292; */
+.displayNameInput,
+h1,
+h2 {
+  color: #50D292;
+}
+
+/* Background Color: #E5E5E5; */
+.messageBox:nth-child(odd),
+.inspiration,
+.messageBox:nth-child(even) .timestamp,
+.reflectMessage{
+  background-color: #E5E5E5;
+}
+
+/* Background Color: #C4C4C4; */
+.messageBox:nth-child(even),
+.quoteBox,
+.timestamp {
+  background-color: #C4C4C4;
+}
+
+/* Text-transform Uppercase*/
+h1,
+h2,
+h3,
+.displayNameInput,
+.sideBar li a,
+.displayNameBox{
+  text-transform: uppercase;
+}
+
+/* Text-align Center */
+.displayNameInput,
+header,
+.howToHeader,
+.sideBar,
+.displayNameNav,
+.displayNameBox,
+.aboutComponent,
+.errorMessage {
+  text-align: center;
+}
+
+/* Box shadow and border radius*/
+.messageBox,
+.displayNameBox,
+.timestamp,
+.inspiration,
+.inspireAuthor,
+.quoteBox,
+.quoteAuthor,
+.reflectMessage,
+.aboutDescription article {
+  box-shadow: 10px 10px 10px -6px rgba(0,0,0,0.75);
+  border-radius: 10px
+}
+
+/*******************************
+        Header Stylings
+*******************************/
+header {
+  height: 50px;
+  position: relative;
+  padding: 5px;
+}
+
+.mobileHamburger {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  font-size: 1.3rem;
+  display: none;
+}
+
+.mobileHamburger:focus {
+  border: 2px solid white;
+}
+
+/*******************************
+      Side Bar Stylings
+*******************************/
+.sideBar {
+  width: 250px;
+  text-decoration: none;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.sideBar li {
+  width: 100%;
+  padding: 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.sideBar li:first-child {
+  border-bottom: none;
+}
+
+
+.sideBar li:nth-child(3) {
+  border-top: none;
+}
+
+.sideBar ul {
+  margin: 0;
+}
+
+.sideBar li a {
+  display: block;
+  width: 100%;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.displayNameNav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*******************************
+      Main Stylings
+*******************************/
+main {
+  display: flex;
+}
+
+.routerWindow {
+  width: calc(100vw - 250px);
+}
+
+/*******************************
+      Collaborate Stylings
+*******************************/
+.messagesComponent {
+  height: calc(100vh - 150px);
+  overflow: auto;
+  padding: 0;
+}
+
+.messageBox {
+  width: 90%;
+  position: relative;
+  margin: 65px auto;
+  padding: 25px 10px;
+  min-height: 50px;
+}
+
+.displayNameBox {
+  padding: 5px;
+  width: 150px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -15px;
+  left: -25px;
+}
+
+.timestamp {
+  padding: 7px;
+  position: absolute;
+  right: -10px;
+  bottom: -20px;
+  font-size: 0.9rem;
+}
+
+.messageInputForm {
+  max-width: 850px;
+  margin: 0 auto;
+  height: 70px;
+  padding-top: 20px;
+}
+
+.messageInput {
+  width: calc(100% - 55px);
+  height: 55px;
+  padding: 5px;
+}
+
+.messageInputForm button {
+  width: 55px;
+  height: 55px;
+}
+
+/*******************************
+      Inspire Stylings
+*******************************/
+.inspirationComponent {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.inspiration {
+  margin-top: 100px;
+  position: relative;
+  padding: 60px;
+  border-radius: 10px;
+  height: calc(100% - 200px);
+}
+
+.inspireQuote {
+  font-size: 1.5rem;
+}
+
+.inspireAuthor {
+  padding: 10px;
+  display: inline-block;
+  position: absolute;
+  bottom: -25px;
+  right: -30px;
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
+.inspireForm {
+  min-width: 250px;
+  margin-top: 65px;
+  display: flex;
+}
+
+.inspireInput {
+  width: calc(100% - 70px);
+  height: 150px;
+  resize: none;
+  padding: 20px;
+}
+
+.inspireForm button {
+  width: 70px;
+  height: 150px;
+}
+
+.errorMessage {
+  border: 3px solid red;
+  padding: 5px;
+  border-radius: 10px;
+  display: none;
+  font-size: 0.9rem;
+  max-width: 350px;
+  margin: 15px auto 0 auto;
+}
+
+.errorMessageShow {
+  display: block;
+}
+
+/*******************************
+      Reflect Stylings
+*******************************/
+
+.reflectMessages {
+  overflow: auto;
+  height: calc(100vh - 50px);
+}
+
+.reflectionBox {
+  width: 90%;
+  margin: 65px auto;
+  
+}
+
+.quoteBox {
+  position: relative;
+  border-radius: 10px;
+  padding: 25px;
+  font-size: 1.2rem;
+}
+
+.quoteAuthor {
+  display: inline-block;
+  position: absolute;
+  border-radius: 10px;
+  padding: 5px;
+  right: -10px;
+  top: -15px;
+}
+
+.reflectMessage {
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 25px;
+  width: 80%;
+  margin: 10px 0 0 30px;
+}
+
+/*******************************
+      About Cohort Stylings
+*******************************/
+.aboutComponent {
+  height: 100%;
+  padding: 40px 60px;
+}
+
+.aboutHeader {
+  border-bottom: 5px solid #282830;
+  display: flex;
+  flex-direction: column;
+  max-width: 776px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.aboutHeader h2 {
+  margin-bottom: 20px;
+}
+
+.aboutDescription {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 100px;
+}
+.aboutDescription article {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.aboutFooter {
+  margin-top: 50px;
+}
+
+.aboutFooter a {
+  color: black;
+}
+
+.aboutDisplayName {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  font-size: 1.3rem;
+}
+
+/*******************************
+      Media Queries
+*******************************/
+@media (max-width: 1100px) {
+  /* Mobile menu*/
+  .mobileHamburger {
+    display: block;
+  }
+
+  /* Side Bar navigation*/
+  .sideBar {
+    position: absolute;
+    justify-content: flex-start;
+  }
+
+  .sideBarHide {
+    display: none;
+  }
+
+  .sideBarShow {
+    display: block;
+  }
+
+  /* Inspiration component */
+  .inspirationComponent {
+    width: 80%;
+  }
+  
+  .inspiration {
+    padding: 40px;
+    margin-top: 40px
+  }
+
+  .inspireInput,
+  .inspireForm button {
+    height: 100px;
+  }
+  
+  .inspireInput {
+    padding: 10px;
+  }
+
+  .inspireForm {
+    margin-top: 65px;
+  }
+
+  /* Collaborate component */
+  .messageInputForm,
+  .messagesComponent,
+  .reflectMessages {
+    margin: 0 auto;
+  }
+
+  .routerWindow {
+    width: 100%;
+  }
+
+  /* AboutCohort component */
+  .aboutDisplayName {
+    margin-bottom: 20px;
+  }
+
+  .aboutDescription {
+    grid-gap: 40px;
+  }
+}
+
+@media (max-width: 390px) {
+  /* Collaborate component */
+  .timestamp {
+    right: -5px;
+  }
+
+  .displayNameBox {
+    left: -10px;
+  }
+
+  /* Inspire component */
+  .inspireQuote {
+    font-size: 1.2rem;
+  }
+
+  .inspirationComponent {
+    width: 90%;
+  }
+
+  .inspireAuthor {
+    right: 50px;
+    font-size: 1.2rem;
+  }
+
+  /* AboutCohort component */
+  .aboutComponent {
+    padding: 20px;
+  }
+
+  
+
+}
